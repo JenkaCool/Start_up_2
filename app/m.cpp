@@ -22,7 +22,7 @@ int m(const text txt, int line_n, int pos_in_line)
     advance(it, line_n);
 
     if ((unsigned int) pos_in_line > it->size() - 1) {
-        printf("There is no such position in the line\nLast position: %ld\n", (long long unsigned int)txt->lines->size() - 1);
+        printf("There is no such position in the line\nLast position: %ld\n", txt->lines->size() - 1);
         return 0;
     }
 
