@@ -93,6 +93,6 @@ int move_next_line_begin(text txt);
  * @param contents текст новой строки
  * @returns статус
  */
-int add_line_after(text txt, int line_number, string contents);
+int add_line_after(text txt, int line_number, string to_add);
 
 #endif
