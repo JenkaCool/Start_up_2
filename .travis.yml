@@ -4,6 +4,12 @@ language:
 before_install:
   - pip install --user cpp-coveralls
 
+addons:
+  sonarcloud:
+    organization: "jenkajenka"
+    token: $SONAR_TOKEN
+      secure: a66ef260975338816298ff6035ad9a4981c547ea
+
 script:
   - qmake
   - make
