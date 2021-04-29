@@ -46,28 +46,3 @@ TEST(add_line_after, empty_text)
 
     free(txt);
 }
-
-TEST(add_line_after, going_out_of_bounds)
-{
-    text txt = create_text();
-    txt->lines->push_back("Line 0\n");
-    txt->lines->push_back("Line 1\n");
-    txt->lines->push_back("Line 2\n");
-    txt->cursor->line_num = 0;
-    txt->cursor->position = 0;
-
-    add_line_after(txt, 7, "New line 7\n");
-
-    string* txt_arr = new string[txt->lines->size()];
-    copy(txt->lines->begin(), txt->lines->end(), txt_arr);
-
-    EXPECT_EQ(txt->lines->size(), 4);
-    EXPECT_STREQ(txt_arr[0].c_str(), "Line 0\n");
-    EXPECT_STREQ(txt_arr[1].c_str(), "Line 1\n");
-    EXPECT_STREQ(txt_arr[2].c_str(), "Line 2\n");
-
-    // Добавляется в конец файла
-    EXPECT_STREQ(txt_arr[3].c_str(), "New line 7\n");
-
-    free(txt);
-}
