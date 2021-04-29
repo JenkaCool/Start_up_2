@@ -62,11 +62,11 @@ TEST(add_line_after, going_out_of_bounds)
     copy(txt->lines->begin(), txt->lines->end(), txt_arr);
 
     EXPECT_EQ(txt->lines->size(), 4);
-    EXPECT_STREQ(txt_arr[0].c_str(), "line 0\n");
-    EXPECT_STREQ(txt_arr[1].c_str(), "line 1\n");
-    EXPECT_STREQ(txt_arr[2].c_str(), "line 2\n");
+    EXPECT_STREQ(txt_arr[0].c_str(), "Line 0\n");
+    EXPECT_STREQ(txt_arr[1].c_str(), "Line 1\n");
+    EXPECT_STREQ(txt_arr[2].c_str(), "Line 2\n");
 
-    // Добавляется в конец файла т.к. произошёл выход за границы
+    // Добавляется в конец файла
     EXPECT_STREQ(txt_arr[3].c_str(), "New line 7\n");
 
     free(txt);
