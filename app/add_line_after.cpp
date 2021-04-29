@@ -8,11 +8,11 @@
  * @returns статус
  */
 
-int add_line_after(const text txt, int line_number, string contents)
+int add_line_after(const text txt, int line_number, string to_add)
 {
     list<string>::iterator it = txt->lines->begin();
     advance(it, line_number + 1);
-    txt->lines->insert(it, contents);
+    txt->lines->insert(it, to_add);
 
     return SUCCESS;
 }
